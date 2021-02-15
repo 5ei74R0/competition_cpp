@@ -1,1 +1,1 @@
-./src/run$1.out
+./src/bin/run$1.out
