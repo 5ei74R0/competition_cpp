@@ -5,7 +5,6 @@ The workspace on VSCode for the C++ user coding in a programming competition
 - .vscode/competition_cpp.code-snippets
 - [lib/](./lib/)
 - [src/](./src/)
-    - bin/
 - [b.sh](./b.sh)
 - [br.sh](./br.sh)
 - [r.sh](./r.sh)
