@@ -1,0 +1,9 @@
+# competition_cpp/src
+source files
+## directories
+- run1.cpp
+- run2.cpp
+- run3.cpp
+- run4.cpp
+- run5.cpp
+- run6.cpp
