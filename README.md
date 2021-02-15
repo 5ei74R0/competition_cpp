@@ -3,12 +3,12 @@ The workspace on VSCode for the C++ user coding in a programming competition
 
 ## directories
 - .vscode/competition_cpp.code-snippets
-- lib/
-- src/
+- [lib/](./lib/)
+- [src/](./src/)
     - bin/
-- b.sh
-- br.sh
-- r.sh
+- [b.sh](./b.sh)
+- [br.sh](./br.sh)
+- [r.sh](./r.sh)
 
 ## use
 1. code program in  
