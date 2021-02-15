@@ -32,7 +32,7 @@
 *.app
 
 # vscode
-.vscode
+.vscode/*.json
 
 # targets
 run1*
