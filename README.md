@@ -2,7 +2,7 @@
 The workspace on VSCode for the C++ user coding in a programming competition
 
 ## directories
-- .vscode/competition_cpp.code-snippets
+- [.vscode/competition_cpp.code-snippets](./.vscode/competition_cpp.code-snippets)
 - [lib/](./lib/)
 - [src/](./src/)
 - [b.sh](./b.sh)
