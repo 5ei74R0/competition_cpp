@@ -99,7 +99,7 @@
 		  "// 1. costs (vector<vector<T>>) : 2d-array containing costs of APSP (costs[frm][to] == cost of \"frm -> to\")",
 		  "template<class T>",
 		  "std::vector<std::vector<T>> WarshallFloyd(const Matrix<T> &graph, T unconnected_param) {",
-		  "    using i32 int_fast32_t;",
+		  "    using i32 = int_fast32_t;",
 		  "    constexpr auto infinity = std::numeric_limits<T>::max();",
 		  "    std::vector<std::vector<T>> costs;",
 		  "    // init costs",
