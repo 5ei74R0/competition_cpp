@@ -1,11 +1,11 @@
-// dijkstra's algorithm
+// Dijkstra's algorithm
 // Verified : http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=5229530#1
 //
 #include "lib/graph/graph_template.hpp"
 #include <bits/stdc++.h>
 
 
-/* dijkstra's algorithm */
+/* Dijkstra's algorithm */
 // calculate costs of SSSP (Single Source Shortest Path)
 // time complexity : O((E + v)logV)
 // 
