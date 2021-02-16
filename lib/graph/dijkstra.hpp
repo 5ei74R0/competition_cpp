@@ -1,4 +1,6 @@
 // dijkstra's algorithm
+// Verified : http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=5229530#1
+//
 #include "lib/graph/graph_template.hpp"
 #include <bits/stdc++.h>
 
