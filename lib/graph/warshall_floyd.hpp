@@ -1,11 +1,11 @@
-// warshall-floyd's algorithm
+// Warshall-Floyd's algorithm
 // Verified : http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=5229580#1
 //
 #include "lib/graph/graph_template.hpp"
 #include <bits/stdc++.h>
 
 
-/* warshall-floyd's algorithm */
+/* Warshall-Floyd's algorithm */
 // calculate costs of APSP (All Pairs Shortest Path)
 // time complexity : O(V^3)
 //
