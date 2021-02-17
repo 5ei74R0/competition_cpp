@@ -198,7 +198,7 @@
 		],
 		"description": "LowLink. detect bridges or articulation points"
 	},
-	"Kruskal's algorithm. to create MST": {
+	"Kruskal's algorithm. create MST": {
 		"prefix": "kruskal",
 		"body": [
 		  "/* Kruskal's algorithm */",
@@ -206,10 +206,10 @@
 		  "// time complexity : O(E logV)",
 		  "//",
 		  "// Parameters",
-		  "// 1. graph (GraphWeighted) : graph",
+		  "// 1. graph (GraphWeighted<T>) : graph",
 		  "// 2. number_of_trees (i32) : number of created MSTs (default : 1)",
 		  "// Returns",
-		  "// 1. pair<total_cost, MST> (pair<i32, GraphWeighted>)",
+		  "// 1. pair<total_cost, MST> (pair<T, GraphWeighted<T>>)",
 		  "// : total cost of MST and MST.",
 		  "//   if number_of_trees > 1, then MST is forest.",
 		  "template <typename T>",
@@ -245,6 +245,52 @@
 		  "}",
 		  ""
 		],
-		"description": "Kruskal's algorithm. to create MST"
+		"description": "Kruskal's algorithm. create MST"
+	},
+	"Prim's algorithm. construct MST": {
+		"prefix": "prim",
+		"body": [
+		  "/* Prim's algorithm */",
+		  "// construct Minimum Spanning Tree",
+		  "// time complexity : O(E logV)",
+		  "//",
+		  "// Parameters",
+		  "// 1. graph (GraphWeighted<T>) : graph",
+		  "//",
+		  "// Returns",
+		  "// 1. pair<total_cost, MST> (pair<T, GraphWeighted<T>>)",
+		  "// : total cost of MST and MST.",
+		  "template<class T>",
+		  "std::pair<T, GraphWeighted<T>> Prim(GraphWeighted<T> &graph) {",
+		  "    T total_cost = 0;",
+		  "    GraphWeighted<T> MST(graph.size());",
+		  "    std::vector<bool> used(graph.size(), false);",
+		  "",
+		  "    using Tup = std::tuple<T, int_fast32_t, int_fast32_t>;",
+		  "    std::priority_queue<Tup, std::vector<Tup>, std::greater<Tup>> que;",
+		  "    que.emplace(0, 0, 0);",
+		  "",
+		  "    while(!que.empty()) {",
+		  "        T cost;",
+		  "        int_fast32_t v;  // parent",
+		  "        int_fast32_t u;  // vertex focused on",
+		  "        tie(cost, u, v) = que.top();",
+		  "        que.pop();",
+		  "        if(used[u]) continue;",
+		  "        used[u] = true;",
+		  "        total_cost += cost;",
+		  "        if(u != v) {",
+		  "            MST[v].emplace_back(u, cost);",
+		  "            MST[u].emplace_back(v, cost);",
+		  "        }",
+		  "        for(auto &edge : graph[u]) {",
+		  "            que.emplace(edge.cost, edge.to, u);",
+		  "        }",
+		  "    }",
+		  "    return(make_pair(total_cost, MST));",
+		  "}",
+		  ""
+		],
+		"description": "Prim's algorithm. construct MST"
 	}
 }
