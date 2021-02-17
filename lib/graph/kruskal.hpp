@@ -2,7 +2,6 @@
 // Verified : https://atcoder.jp/contests/joisc2010/submissions/20232556
 //
 #include "lib/graph/graph_template.hpp"
-#include "lib/data_structure/disjoint_set_union.hpp"
 #include <bits/stdc++.h>
 
 
@@ -11,10 +10,10 @@
 // time complexity : O(E logV)
 //
 // Parameters
-// 1. graph (GraphWeighted) : graph
+// 1. graph (GraphWeighted<T>) : graph
 // 2. number_of_trees (i32) : number of created MSTs (default : 1)
 // Returns
-// 1. pair<total_cost, MST> (pair<i32, GraphWeighted>)
+// 1. pair<total_cost, MST> (pair<T, GraphWeighted<T>>)
 // : total cost of MST and MST.
 //   if number_of_trees > 1, then MST is forest.
 template <typename T>
