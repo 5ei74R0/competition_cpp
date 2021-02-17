@@ -6,3 +6,5 @@ graph algorithm
 - [dijkstra.hpp](./dijkstra.hpp)
 - [warshall_floyd.hpp](./warshall_floyd.hpp)
 - [lowlink.hpp](./lowlink.hpp)
+- [kruskal.hpp](./kruskal.hpp)
+- [prim.hpp](./prim.hpp)
