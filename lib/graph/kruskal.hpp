@@ -12,6 +12,7 @@
 // Parameters
 // 1. graph (GraphWeighted<T>) : graph
 // 2. number_of_trees (i32) : number of created MSTs (default : 1)
+//
 // Returns
 // 1. pair<total_cost, MST> (pair<T, GraphWeighted<T>>)
 // : total cost of MST and MST.

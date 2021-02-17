@@ -12,6 +12,7 @@
 // Parameters
 // 1. graph (GraphWeighted) : weight of every edge >= 0
 // 2. start_vertex (i32) : idx of start_vertex
+//
 // Returns
 // 1. min_dist (vec<T>) : min_dist[i] == cost of SSSP (start_vertex -> i)
 template<class T>

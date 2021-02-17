@@ -12,6 +12,7 @@
 // Attributes
 // 1. articulation_points (vector<i32>) : list of articulation points
 // 2. bridges (vector<pair<i32, i32>>) : list of bridges
+//
 // Methods
 // 1. build : build lowlink. (use at 1st)
 class LowLink {
