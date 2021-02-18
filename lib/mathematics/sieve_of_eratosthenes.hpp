@@ -10,6 +10,11 @@
 //
 // Methods
 // 1. is_prime(i64 n) -> bool : judge whether n is prime number
+//
+// Example
+// constexpr size_t n = 1e7;
+// Sieve<n> sieve; sieve.is_prime(157);
+//
 template<size_t MAX_N>
 class Sieve {
   public:
