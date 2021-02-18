@@ -6,3 +6,4 @@ mathematical operations
 - [mod_int.hpp](./mod_int.hpp)
 - [binomial.hpp](./binomial.hpp)
 - [sieve_of_eratosthenes.hpp](./sieve_of_eratosthenes.hpp)
+- [prime_factorization.hpp](./prime_factorization.hpp)
