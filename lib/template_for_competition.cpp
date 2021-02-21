@@ -65,15 +65,13 @@ std::ostream& operator<<(std::ostream& os, const std::vector<T>& v) {
 const ld Pi = std::acos(-1.0L);
 constexpr ll infll = (1LL<<62)-1;
 constexpr int inf = (1<<30)-1;
-const int mod = 1000000007;
-// const int mod = 998244353;
 
 
 /* Class & Function */
 
 
 /* Main */
-signed main(){
+signed main() {
     double StartTimeOfMainFunction = clock();
 
     // fast io

@@ -91,7 +91,7 @@
 		  "",
 		  "",
 		  "/* Main */",
-		  "signed main(){",
+		  "signed main() {",
 		  "    double StartTimeOfMainFunction = clock();",
 		  "",
 		  "    // fast io",
