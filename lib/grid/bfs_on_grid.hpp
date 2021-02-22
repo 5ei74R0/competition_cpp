@@ -4,6 +4,7 @@
 #include <bits/stdc++.h>
 
 
+/* basic bfs on grid */
 template<class T>
 void bfs_on_grid(int_fast32_t start_i, int_fast32_t start_j, const Grid<T> &grid) {
     std::deque<std::pair<int_fast32_t, int_fast32_t>> que;

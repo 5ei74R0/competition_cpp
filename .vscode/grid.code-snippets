@@ -1,0 +1,92 @@
+{
+	// Place your competition_cpp workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"class representing grid": {
+		"prefix": "grid",
+		"body": [
+		  "/* grid */",
+		  "// class representing grid",
+		  "template<class T = int_fast32_t>",
+		  "class Grid {",
+		  "  public:",
+		  "    int_fast32_t H, W;",
+		  "    std::vector<std::vector<T>> values;",
+		  "    std::vector<std::vector<bool>> seen;",
+		  "",
+		  "    // constructor",
+		  "    //",
+		  "    // Parameters",
+		  "    // - H (int_fast32_t) : Height",
+		  "    // - W (int_fast32_t) : Width",
+		  "    // - initial_value (T) : Grid::values is initialized by it.",
+		  "    Grid(int_fast32_t H, int_fast32_t W, T initial_value)",
+		  "        : H(H), W(W),",
+		  "          values(H, std::vector<T>(W, initial_value)),",
+		  "          values(H, std::vector<bool>(W, false)) {}",
+		  "",
+		  "    // judge whether point[i][j] is out of range or not",
+		  "    //",
+		  "    // Parameters",
+		  "    // - i (int_fast32_t) : position of H-axis",
+		  "    // - j (int_fast32_t) : position of W-axis",
+		  "    //",
+		  "    // Returns",
+		  "    // - (bool) : out of range or not ?",
+		  "    out_of_range(int_fast32_t i, int_fast32_t j) {",
+		  "        return i < 0 || H <= i || j < 0 || j <= W;",
+		  "    }",
+		  "};",
+		  ""
+		],
+		"description": "class representing grid"
+	},
+	"basic BFS on grid": {
+		"prefix": "bfs_on_grid",
+		"body": [
+		  "/* basic bfs on grid */",
+		  "template<class T>",
+		  "void bfs_on_grid(int_fast32_t start_i, int_fast32_t start_j, const Grid<T> &grid) {",
+		  "    std::deque<std::pair<int_fast32_t, int_fast32_t>> que;",
+		  "    que.emplace_back(start_i, start_j);",
+		  "    grid.seen[start_i][start_j] = true;",
+		  "",
+		  "    // if u have to define other movements, update following vectors",
+		  "    std::vector<int_fast32_t> move_i = {1,0,-1,0};",
+		  "    std::vector<int_fast32_t> move_j = {0,-1,0,1};",
+		  "",
+		  "    while (!que.empty()) {",
+		  "        int_fast32_t cur_i, cur_j;",
+		  "        tie(cur_i, cur_j) = que.front();",
+		  "        que.pop_front();",
+		  "        for(int_fast32_t idx = 0; idx < 4; ++idx) {",
+		  "            int_fast32_t nxt_i = cur_i + move_i[idx];",
+		  "            int_fast32_t nxt_j = cur_j + move_j[idx];",
+		  "            if(grid.seen[nxt_i][nxt_j]) continue;",
+		  "            if(grid.out_of_range(nxt_i, nxt_j)) continue;",
+		  "",
+		  "            // write any action",
+		  "",
+		  "            grid.seen[nxt_i][nxt_j] = true;",
+		  "            que.emplace_back(nxt_i, nxt_j);",
+		  "        }",
+		  "    }",
+		  "}",
+		  ""
+		],
+		"description": "basic BFS on grid"
+	}
+}
