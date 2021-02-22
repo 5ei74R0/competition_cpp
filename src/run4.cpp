@@ -71,7 +71,7 @@ constexpr int inf = (1<<30)-1;
 
 
 /* Main */
-signed main(){
+signed main() {
     double StartTimeOfMainFunction = clock();
 
     // fast io
