@@ -8,3 +8,4 @@ mathematical operations
 - [sieve_of_eratosthenes.hpp](./sieve_of_eratosthenes.hpp)
 - [prime_factorization.hpp](./prime_factorization.hpp)
 - [is_prime.hpp](./is_prime.hpp)
+- [enumerate_divisors.hpp](./enumerate_divisors.hpp)
