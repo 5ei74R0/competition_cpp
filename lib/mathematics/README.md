@@ -9,3 +9,4 @@ mathematical operations
 - [prime_factorization.hpp](./prime_factorization.hpp)
 - [is_prime.hpp](./is_prime.hpp)
 - [enumerate_divisors.hpp](./enumerate_divisors.hpp)
+- [fraction.hpp](./fraction.hpp)
