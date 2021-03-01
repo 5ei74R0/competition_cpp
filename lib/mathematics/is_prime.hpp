@@ -1,4 +1,4 @@
-// Prime Factorization
+// judge  whether n is prime number or not
 // Verify : 
 //
 #include <bits/stdc++.h>
@@ -6,6 +6,7 @@
 
 /* prime number judge */
 // judge whether n is prime number or not
+// time complexity : O(sqrtN)
 //
 // Parameters
 // 1. n (i32) : integer to be estimated
