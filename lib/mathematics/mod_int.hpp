@@ -6,8 +6,10 @@
 
 /* ModInt */
 // Operators
-// +, -, *, /, =, ==, !=,
-// +=, -=, *=, /=
+// +, -, *, /,
+// +=, -=, *=, /=,
+// =,
+// ==, !=,
 //
 template<std::int_fast64_t Mod>
 class ModInt {
