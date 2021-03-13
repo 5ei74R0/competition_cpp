@@ -3,6 +3,7 @@ library of Algorithm & Data Structure
 
 ## directories
 - [data_structure/](./data_structure/)
+- [dp/](./dp/)
 - [graph/](./graph/)
 - [grid/](./grid/)
 - [mathematics/](./mathematics/)
