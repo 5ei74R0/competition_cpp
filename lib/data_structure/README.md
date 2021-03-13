@@ -1,4 +1,4 @@
-# graph (competition_cpp/lib/data_structure)
+# data Structures (competition_cpp/lib/data_structure)
 Data Structures
 
 ## directories
