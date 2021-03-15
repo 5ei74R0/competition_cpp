@@ -3,3 +3,4 @@ Data Structures
 
 ## directories
 - [disjoint_set_union.hpp](./disjoint_set_union.hpp)
+- [segment_tree.hpp](./segment_tree.hpp)
