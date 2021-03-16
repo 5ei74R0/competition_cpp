@@ -25,8 +25,26 @@
 // 1. set : set value at i-th element
 //          time complexity : O(logN)
 // 2. query : reply query to [l, r)
-//          time complexity : O(logN)
-// 3. size : return size of array
+//            time complexity : O(logN)
+// 3. lower_bound : return lower_bound index in [first, last)
+//                  e.g.)
+//                      index
+//                          = [0, 1, 2, 3, 4, 5, 6]
+//                      a
+//                          = [1, 3, 5, 0, 0, 1, 1]
+//                      cumulative_sum
+//                          = [1, 4, 9, 9, 9,10,11]
+//                    then, lower_bound(0, 7, 9) == 2
+// 4. upper_bound : return upper_bound index in [first, last)
+//                  e.g.)
+//                      index
+//                          = [0, 1, 2, 3, 4, 5, 6]
+//                      a
+//                          = [1, 3, 5, 0, 0, 1, 1]
+//                      cumulative_sum
+//                          = [1, 4, 9, 9, 9,10,11]
+//                    then, upper_bound(0, 7, 9) == 5
+// 5. size : return size of array
 //
 // Operators (public)
 // 1. [] : access to index. rewriting element is forbidden!
@@ -61,6 +79,57 @@ class SegmentTree {
         return Monoid::op(result_l, result_r);
     }
 
+    std::size_t lower_bound(std::size_t l_idx, std::size_t r_idx, T threshold) const {
+        std::size_t l = l_idx + siz;
+        std::size_t r = r_idx + siz;
+        std::size_t up_shift = 0;
+        T cumulative_e = Monoid::identity_element;
+        for (; l < r; l >>= 1, r >>= 1, ++up_shift) {
+            if (l & 1) {
+                T tmp = Monoid::op(cumulative_e, tree[l]);
+                if (tmp >= threshold) return lower_bound_for_perfect_bin_tree(l, threshold - cumulative_e);
+                cumulative_e = tmp;
+                ++l;
+            }
+        }
+        while (up_shift > 0) {
+            --up_shift;
+            r = r_idx >> up_shift;
+            if (r & 1) {
+                T tmp = Monoid::op(cumulative_e, tree[--r]);
+                if (tmp >= threshold) return lower_bound_for_perfect_bin_tree(r, threshold - cumulative_e);
+                cumulative_e = tmp;
+            }
+        }
+        return r_idx;
+    }
+
+    std::size_t upper_bound(std::size_t l_idx, std::size_t r_idx, T threshold) const {
+        std::size_t l = l_idx + siz;
+        std::size_t r = r_idx + siz;
+        std::size_t up_shift = 0;
+        T cumulative_e = Monoid::identity_element;
+        for (; l < r; l >>= 1, r >>= 1, ++up_shift) {
+            if (l & 1) {
+                T tmp = Monoid::op(cumulative_e, tree[l]);
+                if (tmp > threshold) return upper_bound_for_perfect_bin_tree(l, threshold - cumulative_e);
+                cumulative_e = tmp;
+                ++l;
+            }
+        }
+        while (up_shift > 0) {
+            --up_shift;
+            r = r_idx >> up_shift;
+            if (r & 1) {
+                T tmp = Monoid::op(cumulative_e, tree[--r]);
+                if (tmp > threshold) return upper_bound_for_perfect_bin_tree(r, threshold - cumulative_e);
+                cumulative_e = tmp;
+            }
+        }
+        return r_idx;
+    }
+
+
     std::size_t size() const noexcept { return siz; }
 
     const T& operator[](std::size_t idx) const& { return tree[idx + size()]; }
@@ -69,4 +138,64 @@ class SegmentTree {
   private:
     const std::size_t siz;
     std::vector<T> tree;
+
+    std::size_t lower_bound_for_perfect_bin_tree(std::size_t root, T threshold) const {
+        T cumulative_e = Monoid::identity_element;
+        std::size_t node = root;
+        while (node < siz) {
+            node <<= 1;  // move to left child
+            T tmp = Monoid::op(cumulative_e, tree[node]);
+            if (tmp < threshold) {
+                cumulative_e = tmp;
+                ++node;  // move to right brother
+            }
+        }
+        return node - siz;
+    }
+
+    std::size_t upper_bound_for_perfect_bin_tree(std::size_t root, T threshold) const {
+        T cumulative_e = Monoid::identity_element;
+        std::size_t node = root;
+        while (node < siz) {
+            node <<= 1;  // move to left child
+            T tmp = Monoid::op(cumulative_e, tree[node]);
+            if (tmp <= threshold) {
+                cumulative_e = tmp;
+                ++node;  // move to right brother
+            }
+        }
+        return node - siz;
+    }
 };
+
+
+/* Sample */
+// /* Add (Monoid) */
+// struct Add {
+//     using DataType = std::int_fast64_t;
+//     static const DataType identity_element;
+//     static DataType op(DataType l, DataType r) {
+//         return l + r;
+//     }
+// };
+// const Add::DataType Add::identity_element = 0;
+
+// signed main() {
+//     // fast io
+//     std::cin.tie(nullptr);
+//     std::ios::sync_with_stdio(false);
+
+//     size_t n = 7;
+//     std::vector<std::int_fast64_t> a = {1,3,5,0,0,1,1};  // sum := [1, 4, 9, 9, 9, 10, 11]
+//     std::cout << a << '\n';
+
+//     SegmentTree<Add> seg(a);
+
+//     std::int_fast64_t sm;
+//     std::cin >> sm;
+    
+//     std::cout << "sm : " << (sm) << '\n';
+//     std::cout << "seg.lower_bound(0, n, sm) : " << (seg.lower_bound(0, n, sm)) << '\n';
+//     std::cout << "seg.upper_bound(0, n, sm) : " << (seg.upper_bound(0, n, sm)) << '\n';
+//     std::cout << "seg.upper_bound(0, n, sm) - seg.lower_bound(0, n, sm) : " << (seg.upper_bound(0, n, sm) - seg.lower_bound(0, n, sm)) << '\n';
+// }
