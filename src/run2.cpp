@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
+using namespace std;
 
 #define debug(x) cout <<"DEBUG "<< #x << ": " << (x) << '\n'
-#define rep(i,n) for(int_fast32_t i = 0; i < ((int_fast32_t)(n)); i++)   // 0-indexed up
-#define rep1(i,n) for(int_fast32_t i = 1; i <= ((int_fast32_t)(n)); i++) // 1-indexed up
-#define rrep(i,n) for(int_fast32_t i = ((int_fast32_t)(n)-1); i >= 0; i--)  // 0-indexed down
-#define rrep1(i,n) for(int_fast32_t i = ((int_fast32_t)(n)); i >= 1; i--)   // 1-indexed down
+#define rep(i,n) for(int_fast32_t i = 0; i < ((int_fast32_t)(n)); ++i)   // 0-indexed up
+#define rep1(i,n) for(int_fast32_t i = 1; i <= ((int_fast32_t)(n)); ++i) // 1-indexed up
+#define rrep(i,n) for(int_fast32_t i = ((int_fast32_t)(n)-1); i >= 0; --i)  // 0-indexed down
+#define rrep1(i,n) for(int_fast32_t i = ((int_fast32_t)(n)); i >= 1; --i)   // 1-indexed down
 #define all(x) (x).begin(),(x).end()
 
-using namespace std;
 
 template<typename T>
 using vec = vector<T>;
@@ -15,7 +15,6 @@ using i32 = int_fast32_t;
 using i64 = int_fast64_t;
 using u32 = uint_fast32_t;
 using u64 = uint_fast64_t;
-using ll = long long;
 using ld = long double;
 using vi = vec<int_fast32_t>;
 using vl = vec<int_fast64_t>;
@@ -24,9 +23,9 @@ using vvi = vec<vi>;
 using PII = pair<int_fast32_t, int_fast32_t>;
 
 template<class T>
-using maxheap = std::priority_queue<T>;
+using maxheap = priority_queue<T>;
 template<class T>
-using minheap = std::priority_queue<T, std::vector<T>, std::greater<T>>;
+using minheap = priority_queue<T, vector<T>, greater<T>>;
 
 template<class T,class U>
 inline bool chmax(T &a, const U &b) {
@@ -55,7 +54,7 @@ std::ostream& operator<<(std::ostream& os, const std::pair<T, U>& p) {
 template <class T>
 std::ostream& operator<<(std::ostream& os, const std::vector<T>& v) {
     os << "[";
-    for(i32 i = 0; i < v.size(); ++i) {
+    for(size_t i = 0; i < v.size(); ++i) {
         os << (i ? ", " : "") << v[i];
     }
     os << "]";
@@ -63,8 +62,8 @@ std::ostream& operator<<(std::ostream& os, const std::vector<T>& v) {
 }
 
 const ld Pi = std::acos(-1.0L);
-constexpr ll infll = (1LL<<62)-1;
-constexpr int inf = (1<<30)-1;
+constexpr i64 infll = (1LL<<62)-1;
+constexpr i32 inf = (1<<30)-1;
 
 
 /* Class & Function */
@@ -79,7 +78,7 @@ signed main() {
     ios::sync_with_stdio(false);
     // cout << fixed << setprecision(15);  // fix io precision
 
-    
+
 
     // printf("Elapsed time: %5.3f ms\n",1000.*((clock()-StartTimeOfMainFunction)/CLOCKS_PER_SEC));
 }
