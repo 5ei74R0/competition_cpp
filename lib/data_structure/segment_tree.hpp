@@ -46,9 +46,6 @@
 //                    then, upper_bound(0, 7, 9) == 5
 // 5. size : return size of array
 //
-// Operators (public)
-// 1. [] : access to index. rewriting element is forbidden!
-//
 template <class Monoid>
 class SegmentTree {
     using T = typename Monoid::DataType;
@@ -129,11 +126,7 @@ class SegmentTree {
         return r_idx;
     }
 
-
     std::size_t size() const noexcept { return siz; }
-
-    const T& operator[](std::size_t idx) const& { return tree[idx + size()]; }
-    T operator[](std::size_t idx) const&& { return std::move(tree[idx + size()]); }
 
   private:
     const std::size_t siz;
