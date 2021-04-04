@@ -11,7 +11,7 @@ using u32 = std::uint_fast32_t;
 using u64 = std::uint_fast64_t;
 using ld = long double;
 
-template <typename T> using vec = std::vector<T>;
+template <class T> using vec = std::vector<T>;
 template <class T> using maxheap = std::priority_queue<T>;
 template <class T> using minheap = std::priority_queue<T, std::vector<T>, std::greater<T>>;
 using vi = vec<i32>;
@@ -63,19 +63,18 @@ template <class T, class U> inline bool chmin(T &a, const U &b) {
     return false;
 }
 
-template <class T>
-auto make_vec(std::size_t n, const T &value) {
+template <class T> auto make_vec(std::size_t n, const T &value) {
     return std::vector<T>(n, value);
 }
-template <class... Args>
-auto make_vec(std::size_t n, Args... args) {
+template <class... Args> auto make_vec(std::size_t n, Args... args) {
     return std::vector<decltype(make_vec(args...))>(n, make_vec(args...));
 }
 
 namespace space_575 {  // unsafe: Name collisions can occur.
-    using namespace std;
+using namespace std;
 
-    // edit functions here
+// edit functions here
+
 
 };
 
@@ -84,9 +83,9 @@ signed main() {
     using namespace space_575;
 
     // fast io
-    cin.tie(nullptr);
-    ios::sync_with_stdio(false);
-    // cout << fixed << setprecision(15);  // fix io precision
+    std::cin.tie(nullptr);
+    std::ios::sync_with_stdio(false);
+    // std::cout << std::fixed << std::setprecision(15);  // fix io precision
 
     
 
