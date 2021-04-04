@@ -11,3 +11,4 @@ mathematical operations
 - [enumerate_divisors.hpp](./enumerate_divisors.hpp)
 - [fraction.hpp](./fraction.hpp)
 - [fast_fourier_transform_and_convolution.hpp](./fast_fourier_transform_and_convolution.hpp)
+- [matrix.hpp](./matrix.hpp)
