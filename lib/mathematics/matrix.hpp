@@ -4,7 +4,7 @@
 #include <bits/stdc++.h>
 
 
-/* Matrix */
+/* SquareMatrix */
 // Operators
 // +(SquareMatrix), -(SquareMatrix), *(SquareMatrix), *(T), *(std::vector<T>)
 // +=(SquareMatrix), -=(SquareMatrix), *=(SquareMatrix), *=(T)
