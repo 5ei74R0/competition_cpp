@@ -1,20 +1,9 @@
 // Segment Tree
 // Verified : https://atcoder.jp/contests/abc125/submissions/20956216
 //
+#include "lib/data_structure/monoid.hpp"
 #include <bits/stdc++.h>
 
-
-/* Monoid */
-// Example
-// /* Add (Monoid) */
-// struct Add {
-//     using DataType = std::int_fast64_t;
-//     static const DataType identity_element;
-//     static DataType op(DataType l, DataType r) {
-//         return l + r;
-//     }
-// };
-// const Add::DataType Add::identity_element = 0;
 
 /* Segment Tree */
 //
@@ -46,8 +35,7 @@
 //                    then, upper_bound(0, 7, 9) == 5
 // 5. size : return size of array
 //
-template <class Monoid>
-class SegmentTree {
+template <class Monoid> class SegmentTree {
     using T = typename Monoid::DataType;
 
   public:
@@ -164,14 +152,13 @@ class SegmentTree {
 
 /* Sample */
 // /* Add (Monoid) */
-// struct Add {
-//     using DataType = std::int_fast64_t;
-//     static const DataType identity_element;
-//     static DataType op(DataType l, DataType r) {
-//         return l + r;
+// struct Add : public Monoid {
+//     using DataType = std::int_fast32_t;
+//     inline constexpr static DataType identity_element = 0;
+//     inline constexpr static DataType op(DataType l_element, DataType r_element) {
+//         return l_element + r_element;
 //     }
 // };
-// const Add::DataType Add::identity_element = 0;
 
 // signed main() {
 //     // fast io
