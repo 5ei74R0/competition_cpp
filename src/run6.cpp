@@ -20,7 +20,7 @@ using vld = vec<ld>;
 using vvi = vec<vi>;
 using PII = std::pair<i32, i32>;
 
-// ostream-expension
+// ostream-expansion
 template <class T, class U> std::ostream& operator<<(std::ostream& os, const std::pair<T, U>& p) {
     os << "(" << p.first << ", " << p.second << ")";
     return os;
