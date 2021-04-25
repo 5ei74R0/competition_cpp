@@ -108,7 +108,7 @@
 		  "    std::ios::sync_with_stdio(false);",
 		  "    // std::cout << std::fixed << std::setprecision(15);  // fix io precision",
 		  "",
-		  "    ",
+		  "    $0",
 		  "",
 		  "}",
 		  ""
