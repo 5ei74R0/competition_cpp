@@ -50,8 +50,8 @@ template <class T, class U> std::ostream& operator<<(std::ostream& os, const std
 
 // constants
 constexpr ld pi = M_PIf64x;
-constexpr i64 infll = std::numeric_limits<i64>::max() >> 1;
-constexpr i32 inf = std::numeric_limits<i32>::max() >> 1;
+constexpr i64 infll = std::numeric_limits<i64>::max() / 2;
+constexpr i32 inf = std::numeric_limits<i32>::max() / 2;
 
 /* Class & Function */
 template <class T, class U> inline bool chmax(T &a, const U &b) {
