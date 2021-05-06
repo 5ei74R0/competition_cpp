@@ -32,7 +32,8 @@
 *.app
 
 # vscode
-.vscode/*.json
+.vscode/*
+!./vscode/*.code-snippets
 
 # targets
 run1*
