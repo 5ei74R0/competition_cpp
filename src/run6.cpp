@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
 
-#define debug(x) std::cout <<"DEBUG: "<< #x << "\n↓\n" << (x) << '\n'
+#define debug(x) std::cout <<"DEBUG: "<< #x << "\n" << (x) << '\n'
 #define rep(i,n) for (std::size_t i = 0; i < ((std::size_t)(n)); ++i)
 #define all(x) (x).begin(),(x).end()
 
 // type alias
-using i32 = std::int_fast32_t;
-using i64 = std::int_fast64_t;
-using u32 = std::uint_fast32_t;
-using u64 = std::uint_fast64_t;
+using i32 = std::int32_t;
+using i64 = std::int64_t;
+using u32 = std::uint32_t;
+using u64 = std::uint64_t;
 using usize = std::size_t;
 using ld = long double;
 
@@ -20,6 +20,7 @@ using vl = vec<i64>;
 using vld = vec<ld>;
 using vvi = vec<vi>;
 using PII = std::pair<i32, i32>;
+using PLL = std::pair<i64, i64>;
 
 // ostream-expansion
 template <class T, class U> std::ostream& operator<<(std::ostream& os, const std::pair<T, U>& p) {
@@ -50,15 +51,14 @@ template <class T, class U> std::ostream& operator<<(std::ostream& os, const std
 
 // constants
 constexpr ld pi = M_PIf64x;
-constexpr i64 infll = std::numeric_limits<i64>::max() / 2;
-constexpr i32 inf = std::numeric_limits<i32>::max() / 2;
+template<class T = i32> constexpr T inf = std::numeric_limits<T>::max() / 2;
+template<class T = i32> constexpr T maxim = std::numeric_limits<T>::max();
 
-/* Class & Function */
+// Class & Function
 template <class T, class U> inline bool chmax(T &a, const U &b) {
     if (a < b) { a = b; return true; }
     return false;
 }
-
 template <class T, class U> inline bool chmin(T &a, const U &b) {
     if (a > b) { a = b; return true; }
     return false;
@@ -79,14 +79,15 @@ using namespace std;
 
 };
 
-/* Main */
+// Main
 signed main() {
-    using namespace space_575;
-
     // fast io
     std::cin.tie(nullptr);
     std::ios::sync_with_stdio(false);
     // std::cout << std::fixed << std::setprecision(15);  // fix io precision
+
+    // edit below
+    using namespace space_575;
 
     
 
