@@ -14,9 +14,9 @@
 // Returns
 // 1. divisors (vec<i64>) : divisors of n
 //
-std::vector<int_fast64_t> enumerate_divisors(int_fast64_t n) {
-    std::vector<int_fast64_t> divisors;
-    for (int_fast64_t i = 1; i * i <= n; i++) {
+std::vector<std::int64_t> enumerate_divisors(std::int64_t n) {
+    std::vector<std::int64_t> divisors;
+    for (std::int64_t i = 1; i * i <= n; i++) {
         if (n % i == 0) {
             divisors.push_back(i);
             if (i * i != n) divisors.push_back(n / i);

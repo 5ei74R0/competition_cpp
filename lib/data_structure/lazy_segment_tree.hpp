@@ -8,7 +8,7 @@
 // Example
 // /* Add (Monoid) */
 // struct Add {
-//     using DataType = std::int_fast64_t;
+//     using DataType = std::int64_t;
 //     static const DataType identity_element;
 //     static DataType op(DataType l, DataType r) {
 //         return l + r;
@@ -72,7 +72,7 @@ class LazySegmentTree {
 
   private:
     const std::size_t siz;
-    std::int_fast32_t depth_of_perfect_binary_tree;
+    std::int32_t depth_of_perfect_binary_tree;
     std::vector<T> tree;
     std::vector<T> data_lazy_eval;
 };

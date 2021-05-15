@@ -17,7 +17,7 @@
 // function:
 // 1. op(l_element: DataType, r_element: DataType) -> DataType
 struct Monoid {
-    using DataType = std::int_fast64_t;
+    using DataType = std::int64_t;
     inline constexpr static DataType identity_element = 0;
     inline constexpr static DataType op(DataType l_element, DataType r_element);
 };
@@ -41,12 +41,12 @@ struct Min : public Monoid {
 };
 
 /* MatrixMulti (Monoid) */
-#include "lib/mathematics/matrix.hpp"
-constexpr std::size_t matrix_size = 5;
-struct MatrixMulti : public Monoid {
-    using DataType = SquareMatrix<std::int_fast64_t>;
-    inline constexpr static DataType identity_element = DataType::make_id(matrix_size);
-    inline constexpr static DataType op() DataType l_element, DataType r_element) {
-        return l_element * r_element;
-    }
-};
+// #include "lib/mathematics/matrix.hpp"
+// constexpr std::size_t matrix_size = 5;
+// struct MatrixMulti : public Monoid {
+//     using DataType = SquareMatrix<std::int64_t>;
+//     inline constexpr static DataType identity_element = DataType::make_id(matrix_size);
+//     inline constexpr static DataType op(DataType l_element, DataType r_element) {
+//         return l_element * r_element;
+//     }
+// };

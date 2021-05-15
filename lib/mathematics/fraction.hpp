@@ -17,7 +17,7 @@
 // 
 class Fraction {
   public:
-    using i64 = int_fast64_t;
+    using i64 = std::int64_t;
     i64 numerator, denominator;
     Fraction(i64 Numerator = 0, i64 Denomirator = 1): numerator(Numerator), denominator(Denomirator) {
         err_0_division();

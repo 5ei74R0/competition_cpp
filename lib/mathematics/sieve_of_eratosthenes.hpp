@@ -18,7 +18,7 @@
 template<size_t MAX_N>
 class Sieve {
   public:
-    using i64 = int_fast64_t;
+    using i64 = std::int64_t;
 
     constexpr Sieve(): container() {
         for(i64 i = 1; i < (MAX_N+11)/6; ++i) {

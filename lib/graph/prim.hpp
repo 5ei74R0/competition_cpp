@@ -21,14 +21,14 @@ std::pair<T, GraphWeighted<T>> Prim(GraphWeighted<T> &graph) {
     GraphWeighted<T> MST(graph.size());
     std::vector<bool> used(graph.size(), false);
 
-    using Tup = std::tuple<T, int_fast32_t, int_fast32_t>;
+    using Tup = std::tuple<T, std::int32_t, std::int32_t>;
     std::priority_queue<Tup, std::vector<Tup>, std::greater<Tup>> que;
     que.emplace(0, 0, 0);
 
     while(!que.empty()) {
         T cost;
-        int_fast32_t v;  // parent
-        int_fast32_t u;  // vertex focused on
+        std::int32_t v;  // parent
+        std::int32_t u;  // vertex focused on
         tie(cost, u, v) = que.top();
         que.pop();
         if(used[u]) continue;

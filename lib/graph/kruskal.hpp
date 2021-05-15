@@ -18,23 +18,23 @@
 // : total cost of MST and MST.
 //   if number_of_trees > 1, then MST is forest.
 template <typename T>
-std::pair<T, GraphWeighted<T>> Kruskal(GraphWeighted<T> &graph, int_fast32_t number_of_trees = 1) {
-    std::vector<int_fast32_t> forest;
-    std::vector<int_fast32_t> siz(graph.size(), 1);
+std::pair<T, GraphWeighted<T>> Kruskal(GraphWeighted<T> &graph, std::int32_t number_of_trees = 1) {
+    std::vector<std::int32_t> forest;
+    std::vector<std::int32_t> siz(graph.size(), 1);
     GraphWeighted<T> MST(graph.size());
     T total_cost = 0;
-    int_fast32_t num_of_trees = graph.size();
+    std::int32_t num_of_trees = graph.size();
 
-    for(int_fast32_t i = 0; i < graph.size(); ++i) forest.push_back(i);
-    std::vector<std::tuple<T, int_fast32_t, int_fast32_t>> edges;
-    for(int_fast32_t u = 0; u < graph.size(); ++u) for(auto v : graph[u]) edges.emplace_back(v.cost, u, v.to);
+    for(std::int32_t i = 0; i < graph.size(); ++i) forest.push_back(i);
+    std::vector<std::tuple<T, std::int32_t, std::int32_t>> edges;
+    for(std::int32_t u = 0; u < graph.size(); ++u) for(auto v : graph[u]) edges.emplace_back(v.cost, u, v.to);
     std::sort(edges.begin(), edges.end());
 
     for(auto e : edges) {
         if(num_of_trees == number_of_trees) break;
-        int_fast32_t U, V; T cost;
+        std::int32_t U, V; T cost;
         std::tie(cost, U, V) = e;
-        int_fast32_t u = U, v = V;
+        std::int32_t u = U, v = V;
         u = [&]() {while(forest[u] != u) {u = forest[u] = forest[forest[u]];} return u;}();
         v = [&]() {while(forest[v] != v) {v = forest[v] = forest[forest[v]];} return v;}();
         if(forest[u] == forest[v]) continue;

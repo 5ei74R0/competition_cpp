@@ -20,7 +20,7 @@
 //   if there is a negative cycle include "k", then costs[k][k] < 0
 template<class T>
 std::vector<std::vector<T>> WarshallFloyd(const Matrix<T> &graph, T unconnected_param) {
-    using i32 = int_fast32_t;
+    using i32 = std::int32_t;
     constexpr auto infinity = std::numeric_limits<T>::max();
     std::vector<std::vector<T>> costs = graph;
     // init costs

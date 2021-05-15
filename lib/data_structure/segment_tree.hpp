@@ -153,7 +153,7 @@ template <class Monoid> class SegmentTree {
 /* Sample */
 // /* Add (Monoid) */
 // struct Add : public Monoid {
-//     using DataType = std::int_fast32_t;
+//     using DataType = std::int32_t;
 //     inline constexpr static DataType identity_element = 0;
 //     inline constexpr static DataType op(DataType l_element, DataType r_element) {
 //         return l_element + r_element;
@@ -166,12 +166,12 @@ template <class Monoid> class SegmentTree {
 //     std::ios::sync_with_stdio(false);
 
 //     size_t n = 7;
-//     std::vector<std::int_fast64_t> a = {1,3,5,0,0,1,1};  // sum := [1, 4, 9, 9, 9, 10, 11]
+//     std::vector<std::int64_t> a = {1,3,5,0,0,1,1};  // sum := [1, 4, 9, 9, 9, 10, 11]
 //     std::cout << a << '\n';
 
 //     SegmentTree<Add> seg(a);
 
-//     std::int_fast64_t sm;
+//     std::int64_t sm;
 //     std::cin >> sm;
     
 //     std::cout << "sm : " << (sm) << '\n';

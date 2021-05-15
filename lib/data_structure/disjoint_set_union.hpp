@@ -14,7 +14,7 @@
 // 3. size : return size of the group including x
 class DisjointSetUnion {
   public:
-    using i32 = int_fast32_t;
+    using i32 = int32_t;
     explicit DisjointSetUnion(i32 sz) : parent(sz), siz(sz, 1) {
         for(i32 i = 0; i < sz; ++i) parent[i] = i;
     }

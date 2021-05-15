@@ -11,10 +11,10 @@
 // =,
 // ==, !=,
 //
-template<std::int_fast64_t Mod>
+template<std::int64_t Mod>
 class ModInt {
   public:
-    using i64 = std::int_fast64_t;
+    using i64 = std::int64_t;
     i64 val;
     // constructor
     constexpr ModInt(const i64 p=0) noexcept : val(p>=0 ? p%Mod : (Mod+(p%Mod))%Mod) {}

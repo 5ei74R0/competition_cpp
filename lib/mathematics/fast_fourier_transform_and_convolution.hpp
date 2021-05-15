@@ -43,7 +43,7 @@ namespace FastFourierTransform {
         return ret;
     }
 
-    template<class T = int_fast32_t, class U, class V>
+    template<class T = std::int32_t, class U, class V>
     std::vector<T> convolution(std::vector<U> f, std::vector<V> g, bool Round = std::is_integral<T>::value) {
         int n = f.size() + g.size() - 1;
         int p_of_2 = 1;
@@ -74,7 +74,7 @@ namespace FastFourierTransform {
 //     cout << fixed << setprecision(15);
 
 //     size_t n; cin >> n;
-//     vector<int_fast32_t> a(n), b(n);
+//     vector<std::int32_t> a(n), b(n);
 //     for(int i = 0; i < n; ++i) cin >> a[i] >> b[i];
 //     auto ab = FastFourierTransform::convolution(a, b);
 

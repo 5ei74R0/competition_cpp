@@ -91,7 +91,7 @@ template <class T> class SquareMatrix {
         return ret;
     }
 
-    constexpr SquareMatrix pow(std::int_fast32_t n) noexcept {
+    constexpr SquareMatrix pow(std::int32_t n) noexcept {
         SquareMatrix ret = SquareMatrix::make_id(size());
         SquareMatrix a(*this);
         while (n > 0) {
@@ -113,4 +113,4 @@ template <class T> class SquareMatrix {
   private:
     VecVec mat;
 };
-using MI = SquareMatrix<std::int_fast32_t>;
+using MI = SquareMatrix<std::int32_t>;

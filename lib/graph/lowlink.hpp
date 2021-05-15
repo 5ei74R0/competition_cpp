@@ -17,7 +17,7 @@
 // 1. build : build lowlink. (use at 1st)
 class LowLink {
   public:
-    using i32 = int_fast32_t;
+    using i32 = std::int32_t;
     std::vector<i32> articulation_points;
     std::vector<std::pair<i32, i32>> bridges;
     explicit LowLink(const Graph &graph)

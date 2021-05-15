@@ -25,7 +25,7 @@ std::map<T_n, int> prime_factor(T_n n) {
 template<size_t MAX_N>
 class PrimeFactorization {
   public:
-    using i64 = int_fast64_t;
+    using i64 = std::int64_t;
     constexpr PrimeFactorization()
         : smallest_prime_factors() {
         for(i64 i = 0; i <= MAX_N; ++i) {
@@ -51,5 +51,5 @@ class PrimeFactorization {
         return primes_map;
     }
   private:
-    int_fast64_t smallest_prime_factors[MAX_N+1];
+    std::int64_t smallest_prime_factors[MAX_N+1];
 };

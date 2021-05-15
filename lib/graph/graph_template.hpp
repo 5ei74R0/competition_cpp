@@ -6,20 +6,20 @@
 // represent edge of weighted graph
 template<typename T>
 struct Edge {
-    int_fast32_t src;  // idx of the source vertex
-    int_fast32_t to;  // idx of the vertex this edge reaches
+    std::int32_t src;  // idx of the source vertex
+    std::int32_t to;  // idx of the vertex this edge reaches
     T cost;  // weight
 
-    Edge(int_fast32_t to, T cost)
+    Edge(std::int32_t to, T cost)
         : src(-1), to(t), cost(w) {}
-    Edge(int_fast32_t src, int_fast32_t to, T cost)
+    Edge(std::int32_t src, std::int32_t to, T cost)
         : src(src), to(to), cost(cost) {}
 };
 
-template<typename T = int_fast32_t>
+template<typename T = std::int32_t>
 using GraphWeighted = std::vector<std::vector<Edge<T>>>;  // weighted graph
-using Graph = std::vector<std::vector<int_fast32_t>>;  // graph
-template<typename T = int_fast32_t>
+using Graph = std::vector<std::vector<std::int32_t>>;  // graph
+template<typename T = std::int32_t>
 using Matrix = std::vector<std::vector<T>>;  // adjacency matrix
 
 

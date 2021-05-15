@@ -5,7 +5,7 @@
 
 
 struct mo_algorithm {
-    using i32 = int_fast32_t;
+    using i32 = int32_t;
     i32 sqrt_n;
     i32 idx_l, idx_r;
     std::vector<i32> query_order;
