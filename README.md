@@ -5,9 +5,9 @@ The workspace on VSCode for the C++ user coding in a programming competition
 ### [.vscode/](./.vscode/)
 snippets  
 ### [archive/](./archive/)
-written code
+contains written code  
 ### [lib/](./lib/)
-library for the programming competition
+library for the programming competition  
 ### [src/](./src/)
 source files
 ### shell scripts
