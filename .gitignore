@@ -33,12 +33,9 @@
 
 # vscode
 .vscode/*
-!./vscode/*.code-snippets
+!/.vscode/*.code-snippets
 
 # targets
-run1*
-run2*
-run3*
-run4*
-run5*
-run6*
+/src/*
+!/src/*.cc
+!/src/*.cpp
