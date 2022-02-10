@@ -1,6 +1,5 @@
 #if !defined(MAIN_CC)
 /* ========================================================================== */
-/* ========================================================================== */
 #define MAIN_CC
 /**
  * @brief main part of the program.
@@ -21,21 +20,18 @@ using vl = vec<i64>;
 using vld = vec<ld>;
 using vvi = vec<vi>;
 
-// edit here
+void solve() {
+  // std::cout << std::fixed << std::setprecision(15);
+  // edit here
+}
 
 };  // namespace competition
 
 signed main() {
-  using namespace competition;
-
-  // fast io
   std::cin.tie(nullptr);
   std::ios::sync_with_stdio(false);
-  // std::cout << std::fixed << std::setprecision(15);  // fix io precision
-
-  // edit here
+  competition::solve();
 }
-
 /* ========================================================================== */
 /* ========================================================================== */
 #else  // MAIN_CC
