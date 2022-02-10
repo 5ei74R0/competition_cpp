@@ -1,10 +1,13 @@
 # competition_cpp/src
 source files
-## directories
-- [bin/](./bin/)
-- [run1.cpp](./run1.cpp)
-- [run2.cpp](./run2.cpp)
-- [run3.cpp](./run3.cpp)
-- [run4.cpp](./run4.cpp)
-- [run5.cpp](./run5.cpp)
-- [run6.cpp](./run6.cpp)
+
+## Directories
+- [`run1.cc`](./run1.cc)
+- [`run2.cc`](./run2.cc)
+- [`run3.cc`](./run3.cc)
+- [`run4.cc`](./run4.cc)
+- [`run5.cc`](./run5.cc)
+- [`run6.cc`](./run6.cc)
+- [`run7.cc`](./run7.cc)
+- [`run8.cc`](./run8.cc)
+- [`template.cc`](./template.cc)
