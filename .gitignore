@@ -36,6 +36,16 @@
 !/.vscode/*.code-snippets
 
 # targets
-/src/*
+/src/
+!/src/*.c
 !/src/*.cc
 !/src/*.cpp
+
+# lib
+lib/
+!/lib/**/*.h
+!/lib/**/*.hh
+!/lib/**/*.hpp
+
+# README.md
+/**/README.md
