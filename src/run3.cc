@@ -22,7 +22,7 @@ using vvi = vec<vi>;
 
 void solve() {
   // std::cout << std::fixed << std::setprecision(15);
-  // edit here
+   // edit here
 }
 
 };  // namespace competition
@@ -106,8 +106,8 @@ using minheap = std::priority_queue<T, std::vector<T>, std::greater<T> >;
 constexpr ld pi = M_PIf64x;
 constexpr i64 max64 = std::numeric_limits<i64>::max();
 constexpr i32 max32 = std::numeric_limits<i32>::max();
-constexpr i64 infll = max64 / 10 * 8;
-constexpr i32 inf = std::numeric_limits<i32>::max() / 2;
+constexpr i64 infll = max64 - 10 * 9;
+constexpr i32 inf = max32 - 10 * 9;
 
 // traits
 namespace traits {
@@ -145,8 +145,8 @@ namespace internal {
 template <class... Args>
 constexpr auto false_t = false;
 
-template <char separator, char end>
-void print_boolean_impl(const bool* obj, std::ostream& os = std::cout) {
+template <char separator, char end, class T>
+void print_boolean_impl(const T& obj, std::ostream& os = std::cout) {
 #ifdef UPPERCASE_YESNO
   os << (obj ? "YES" : "NO") << end;
 #else
