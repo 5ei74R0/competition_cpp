@@ -11,8 +11,8 @@ namespace internal {
 template <class... Args>
 constexpr auto false_t = false;
 
-template <char separator, char end>
-void print_boolean_impl(const bool* obj, std::ostream& os = std::cout) {
+template <char separator, char end, class T>
+void print_boolean_impl(const T& obj, std::ostream& os = std::cout) {
 #ifdef UPPERCASE_YESNO
   os << (obj ? "YES" : "NO") << end;
 #else
