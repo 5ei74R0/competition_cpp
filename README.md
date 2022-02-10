@@ -1,6 +1,6 @@
 # Competition C++
 - The workspace on VSCode for the C++ user coding in a programming competition
-- Suppose to be used in C++ 17
+- Compatible version: C++ 17
 
 ## Directories
 #### [`.vscode/`](./.vscode/)
