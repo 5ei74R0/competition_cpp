@@ -4,9 +4,10 @@
 #include <iostream>
 #include <utility>
 
+namespace lib {
 namespace traits {
-
 namespace internal {
+
 template <class... Args>
 constexpr auto false_t = false;
 
@@ -42,5 +43,6 @@ template <class T>
 using is_iterable = decltype(internal::is_iterable_impl<T>(0));
 
 }  // namespace traits
+}  // namespace lib
 
 #endif  // BASE_TRAITS_H
