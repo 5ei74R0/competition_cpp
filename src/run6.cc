@@ -103,7 +103,7 @@ template <class T>
 using minheap = std::priority_queue<T, std::vector<T>, std::greater<T> >;
 
 // constants
-constexpr ld pi = M_PIf64x;
+constexpr ld pi = M_PI_4;
 constexpr i64 max64 = std::numeric_limits<i64>::max();
 constexpr i32 max32 = std::numeric_limits<i32>::max();
 constexpr i64 inf64 = max64 - i64(u64(~0) >> 3);
